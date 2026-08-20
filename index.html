@@ -1,133 +1,191 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth scroll-pt-24">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="CV y portafolio de Benjamín Cubillos, estudiante de Ingeniería en Informática.">
+        <link href="./assets/css/style.css" rel="stylesheet">
+        <script src="./assets/js/main.js" defer></script>
         <title>CV y portafolio | Benjamín Cubillos</title>
     </head>
-    <body>
-        <header>
-            <h1>Benjamín Cubillos</h1>
-            <p>Estudiante de informática</p>
-
-            <nav>
-                <a href="#perfil">Perfil</a>
-                <a href="#educacion">Educación</a>
-                <a href="#habilidades">Habilidades</a>
-                <a href="#portafolio">Portafolio</a>
-                <a href="#contacto">Contacto</a>
+    <body class="min-h-screen bg-slate-100 text-slate-900">
+        <header class="sticky top-0 z-50">
+            <nav class="flex flex-wrap items-center gap-2 bg-slate-950 px-4 py-3 shadow-md" aria-label="Navegación principal">
+                <h1 class="px-3 text-lg font-semibold">
+                    <a class="text-violet-300" href="#perfil">Benjamín Cubillos</a>
+                </h1>
+                <button id="menu-button" class="ml-auto inline-flex items-center justify-center rounded-md px-3 py-2 text-slate-200 transition-colors hover:bg-violet-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300 md:hidden" type="button" aria-expanded="false" aria-controls="nav-menu">
+                    <span id="menu-icon" class="text-2xl leading-none" aria-hidden="true">☰</span>
+                    <span id="menu-label" class="sr-only">Abrir menú</span>
+                </button>
+                <div id="nav-menu" class="hidden w-full flex-col items-stretch gap-2 pt-2 md:ml-auto md:flex md:w-auto md:flex-row md:items-center md:justify-end md:pt-0">
+                    <a class="rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-violet-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300" href="#perfil">Perfil</a>
+                    <a class="rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-violet-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300" href="#educacion">Educación</a>
+                    <a class="rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-violet-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300" href="#experiencia">Experiencia</a>
+                    <a class="rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-violet-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300" href="#habilidades">Habilidades</a>
+                    <a class="rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-violet-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300" href="#portafolio">Portafolio</a>
+                    <a class="rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-violet-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300" href="#contacto">Contacto</a>
+                </div>
             </nav>
         </header>
 
-        <main>
-            <section id="perfil">
-                <h2>Perfil profesional</h2>
-                <img src="../assets/images/gato.gif" alt="Imagen de perfil de Benjamín Cubillos" width="250">
-                <p>
-                    Soy estudiante de informática interesado en el desarrollo de
-                    software y en aprender nuevas tecnologías. Me caracterizo por
-                    ser responsable, organizado y trabajar bien en equipo.
-                </p>
+        <main class="mx-auto max-w-5xl space-y-8 px-6 py-10">
+            <section id="perfil" class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 md:p-8">
+                <div class="flex flex-col items-center gap-6 md:flex-row md:items-start">
+                    <img class="h-40 w-40 shrink-0 rounded-full object-cover ring-4 ring-violet-200" src="./assets/images/gato.gif" alt="Imagen de perfil de Benjamín Cubillos">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-2xl font-bold text-slate-900">Perfil profesional</h2>
+                        <p class="mt-1 font-medium text-violet-700">Estudiante de Ingeniería en Informática</p>
+                        <p class="mt-4 max-w-2xl leading-7 text-slate-700">
+                            Soy estudiante de informática interesado en el desarrollo de
+                            software y en aprender nuevas tecnologías. Me caracterizo por
+                            ser responsable, organizado y trabajar bien en equipo.
+                        </p>
+                    </div>
+                </div>
             </section>
 
-            <section id="educacion">
-                <h2>Educación</h2>
-                <ul>
-                    <li>
-                        <strong>Duoc UC</strong><br>
-                        Carrera: Ingenieria en informática<br>
-                        2025 - Actualidad
+            <section id="educacion" class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 md:p-8">
+                <h2 class="text-2xl font-bold text-slate-900">Educación</h2>
+                <ul class="ml-2 mt-6 border-l-2 border-violet-200">
+                    <li class="relative pb-8 pl-8">
+                        <span class="absolute -left-[0.5625rem] top-1 h-4 w-4 rounded-full border-4 border-white bg-violet-500" aria-hidden="true"></span>
+                        <p class="text-sm font-semibold text-slate-500">2025 - Actualidad</p>
+                        <strong class="mt-1 block text-lg text-slate-900">Duoc UC</strong>
+                        <p class="mt-1 text-slate-700">Ingeniería en Informática</p>
                     </li>
-                    <li>
-                        <strong>Universidad Técnica Federico Santa María</strong><br>
-                        Carrera: Ingenieria civil en informática
-                        2023 - 2024
+                    <li class="relative pb-8 pl-8">
+                        <span class="absolute -left-[0.5625rem] top-1 h-4 w-4 rounded-full border-4 border-white bg-violet-500" aria-hidden="true"></span>
+                        <p class="text-sm font-semibold text-slate-500">2023 - 2024</p>
+                        <strong class="mt-1 block text-lg text-slate-900">Universidad Técnica Federico Santa María</strong>
+                        <p class="mt-1 text-slate-700">Ingeniería Civil en Informática</p>
                     </li>
-                    <li>
-                        <strong>Liceo Bicentenario Italia</strong><br>
-                        Enseñanza media<br>
-                        2019 - 2022
+                    <li class="relative pb-8 pl-8">
+                        <span class="absolute -left-[0.5625rem] top-1 h-4 w-4 rounded-full border-4 border-white bg-violet-500" aria-hidden="true"></span>
+                        <p class="text-sm font-semibold text-slate-500">2019 - 2022</p>
+                        <strong class="mt-1 block text-lg text-slate-900">Liceo Bicentenario Italia</strong>
+                        <p class="mt-1 text-slate-700">Enseñanza media</p>
                     </li>
-                    <li>
-                        <strong>Escuela Hermanos Matte</strong><br>
-                        Enseñanza básica<br>
-                        2010 - 2018
+                    <li class="relative pl-8">
+                        <span class="absolute -left-[0.5625rem] top-1 h-4 w-4 rounded-full border-4 border-white bg-violet-500" aria-hidden="true"></span>
+                        <p class="text-sm font-semibold text-slate-500">2010 - 2018</p>
+                        <strong class="mt-1 block text-lg text-slate-900">Escuela Hermanos Matte</strong>
+                        <p class="mt-1 text-slate-700">Enseñanza básica</p>
                     </li>
                 </ul>
             </section>
 
-            <section id="experiencia">
-                <h2>Experiencia</h2>
-                <article>
-                    <h3>Operario bodega area administrativa (part-time)</h3>
-                    <p><strong>Blue Express | Diciembre 2024 - Febrero 2025</strong></p>
-                    <p>
-                        Responsable de controlar vuelos y cargas que llegaban a la bodega desde aduanas,
-                        la principal tarea consistía en rellenar datos en multiples tablas de Excel.
-                    </p>
-                </article>
-                <article>
-                    <h3>Ayudante de area informática</h3>
-                    <p><strong>DuocUC | Julio 2025 - Diciembre 2025</strong></p>
-                    <p>
-                        Apoyo en la organización y realización de eventos y charlas del área informática.
-                        Preparación de puestos, orden y acondicionamiento de salas,
-                        orientación a asistentes y explicación de las actividades y proyectos presentados. 
-                        Colaboración con docentes y otros ayudantes para asegurar el correcto desarrollo de cada evento.
-                    </p>
-                </article>
-            </section>
-
-            <section id="habilidades">
-                <h2>Habilidades</h2>
-                <ul>
-                    <li>HTML, CSS y JS</li>
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>C/C++</li>
-                    <li>Ingles Intermedio</li>
-                    <li>Excel</li>
-                    <li>Trabajo en equipo</li>
-                    <li>Organización</li>
-                    <li>Resolución de problemas</li>
-
+            <section id="experiencia" class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 md:p-8">
+                <h2 class="text-2xl font-bold text-slate-900">Experiencia</h2>
+                <ul class="ml-2 mt-6 border-l-2 border-violet-200">
+                    <li class="relative pb-8 pl-8">
+                        <span class="absolute -left-[0.5625rem] top-6 h-4 w-4 rounded-full border-4 border-white bg-violet-500" aria-hidden="true"></span>
+                        <article class="rounded-xl bg-slate-50 p-5 ring-1 ring-slate-200">
+                            <p class="text-sm font-semibold text-slate-500">Julio 2025 - Diciembre 2025</p>
+                            <h3 class="mt-1 text-lg font-semibold text-slate-900">Ayudante del área de informática</h3>
+                            <p class="mt-1 font-medium text-slate-600">Duoc UC</p>
+                            <p class="mt-4 leading-7 text-slate-700">
+                                Apoyo en la organización y realización de eventos y charlas del área informática.
+                                Preparación de puestos, orden y acondicionamiento de salas,
+                                orientación a asistentes y explicación de las actividades y proyectos presentados.
+                                Colaboración con docentes y otros ayudantes para asegurar el correcto desarrollo de cada evento.
+                            </p>
+                        </article>
+                    </li>
+                    <li class="relative pl-8">
+                        <span class="absolute -left-[0.5625rem] top-6 h-4 w-4 rounded-full border-4 border-white bg-violet-500" aria-hidden="true"></span>
+                        <article class="rounded-xl bg-slate-50 p-5 ring-1 ring-slate-200">
+                            <p class="text-sm font-semibold text-slate-500">Diciembre 2024 - Febrero 2025</p>
+                            <h3 class="mt-1 text-lg font-semibold text-slate-900">Operario de bodega, área administrativa</h3>
+                            <p class="mt-1 font-medium text-slate-600">Blue Express · Part-time</p>
+                            <p class="mt-4 leading-7 text-slate-700">
+                                Responsable de controlar vuelos y cargas que llegaban a la bodega desde aduanas,
+                                la principal tarea consistía en completar datos en múltiples tablas de Excel.
+                            </p>
+                        </article>
+                    </li>
                 </ul>
             </section>
 
-            <section id="portafolio">
-                <h2>Portafolio</h2>
-                <p>Estos son algunos de los proyectos que he desarrollado:</p>
-                <p style="color:cornflowerblue"><small>Presionar en la imagen para ir al repositorio</small></p>
-
-                <article>
-                    <h3>MediReservas</h3>
-                    <a href="https://github.com/GabFloresLuna/MediReservas" target="_blank">
-                        <img src="../assets/images/Proyecto-MediReservas.png" alt="Vista previa del proyecto MediReservas" width="300">
-                    </a>
-                    <p>MediReservas es un sistema de reservas médicas desarrollado bajo una arquitectura de microservicios con Spring Boot.</p>
-                </article>
-
-                <article>
-                    <h3>Examen FullStack I</h3>
-                    <a href="https://github.com/Hanrol/ExamenTransversal-FullStack1" target="_blank">
-                        <img src="../assets/images/Proyecto-Examen FullStack I.png" alt="Vista previa del proyecto Examen FullStack I" width="300">
-                    </a>
-                    <p>Resolución del Examen Transversal del ramo FullStack I.</p>
-                </article>
+            <section id="habilidades" class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 md:p-8">
+                <h2 class="text-2xl font-bold text-slate-900">Habilidades</h2>
+                <div class="mt-6 grid gap-6 md:grid-cols-3">
+                    <div>
+                        <h3 class="font-semibold text-slate-900">Técnicas</h3>
+                        <ul class="mt-3 flex flex-wrap gap-2">
+                            <li class="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700">HTML, CSS y JavaScript</li>
+                            <li class="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700">Python</li>
+                            <li class="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700">Java</li>
+                            <li class="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700">C/C++</li>
+                            <li class="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700">Excel</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900">Idiomas</h3>
+                        <ul class="mt-3 flex flex-wrap gap-2">
+                            <li class="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700">Inglés intermedio</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900">Personales</h3>
+                        <ul class="mt-3 flex flex-wrap gap-2">
+                            <li class="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700">Trabajo en equipo</li>
+                            <li class="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700">Organización</li>
+                            <li class="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700">Resolución de problemas</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
-            <section id="contacto">
-                <h2>Contacto</h2>
-                <address>
-                    <p>Teléfono: <a href="tel:+56935186822">+56 9 3518 6822</a></p>
-                    <p>Correo: <a href="mailto:benjaminc.pers@gmail.com">benjaminc.pers@gmail.com</a></p>
-                    <p>GitHub: <a href="https://github.com/Hanrol" target="_blank">Mi perfil de GitHub</a></p>
+            <section id="portafolio" class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 md:p-8">
+                <h2 class="text-2xl font-bold text-slate-900">Portafolio</h2>
+                <p class="mt-2 text-slate-600">Estos son algunos de los proyectos que he desarrollado.</p>
+
+                <div class="mt-6 grid gap-6 md:grid-cols-2">
+                    <article class="overflow-hidden rounded-xl bg-slate-50 ring-1 ring-slate-200">
+                        <a class="block overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700" href="https://github.com/GabFloresLuna/MediReservas" target="_blank" rel="noopener noreferrer">
+                            <img class="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105" src="./assets/images/Proyecto-MediReservas.png" alt="Vista previa del proyecto MediReservas" loading="lazy">
+                        </a>
+                        <div class="p-5">
+                            <h3 class="text-lg font-semibold text-slate-900">MediReservas</h3>
+                            <p class="mt-2 leading-7 text-slate-700">MediReservas es un sistema de reservas médicas desarrollado bajo una arquitectura de microservicios con Spring Boot.</p>
+                            <a class="mt-4 inline-block font-semibold text-violet-700 underline decoration-violet-300 underline-offset-4 transition-colors hover:text-blue-700" href="https://github.com/GabFloresLuna/MediReservas" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+                        </div>
+                    </article>
+
+                    <article class="overflow-hidden rounded-xl bg-slate-50 ring-1 ring-slate-200">
+                        <a class="block overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700" href="https://github.com/Hanrol/ExamenTransversal-FullStack1" target="_blank" rel="noopener noreferrer">
+                            <img class="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105" src="./assets/images/Proyecto-Examen FullStack I.png" alt="Vista previa del proyecto Examen FullStack I" loading="lazy">
+                        </a>
+                        <div class="p-5">
+                            <h3 class="text-lg font-semibold text-slate-900">Examen FullStack I</h3>
+                            <p class="mt-2 leading-7 text-slate-700">Resolución del Examen Transversal del ramo FullStack I.</p>
+                            <a class="mt-4 inline-block font-semibold text-violet-700 underline decoration-violet-300 underline-offset-4 transition-colors hover:text-blue-700" href="https://github.com/Hanrol/ExamenTransversal-FullStack1" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="contacto" class="rounded-xl bg-white px-6 py-5 shadow-sm ring-1 ring-slate-200">
+                <h2 class="text-xl font-bold text-slate-900">Contacto</h2>
+                <address class="mt-3 flex flex-col gap-2 not-italic text-sm text-slate-700 sm:flex-row sm:flex-wrap sm:gap-x-6">
+                    <p><strong class="text-slate-900">Teléfono:</strong> <a class="text-violet-700 transition-colors hover:text-blue-700 hover:underline" href="tel:+56935186822">+56 9 3518 6822</a></p>
+                    <p><strong class="text-slate-900">Correo:</strong> <a class="break-all text-violet-700 transition-colors hover:text-blue-700 hover:underline" href="mailto:benjaminc.pers@gmail.com">benjaminc.pers@gmail.com</a></p>
+                    <p><strong class="text-slate-900">GitHub:</strong> <a class="text-violet-700 transition-colors hover:text-blue-700 hover:underline" href="https://github.com/Hanrol" target="_blank" rel="noopener noreferrer">github.com/Hanrol</a></p>
                 </address>
             </section>
         </main>
 
-        <footer>
-            <p><small>© 2026 Benjamín Cubillos. Todos los derechos reservados.</small></p>
+        <button id="back-to-top" class="fixed right-6 bottom-6 hidden h-12 w-12 items-center justify-center rounded-full bg-violet-600 text-2xl font-semibold text-white shadow-lg transition-colors hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600" type="button">
+            <span aria-hidden="true">↑</span>
+            <span class="sr-only">Volver arriba</span>
+        </button>
+
+        <footer class="bg-slate-950">
+            <div class="mx-auto max-w-5xl px-6 py-[2.375rem] text-left">
+                <p class="text-base font-semibold tracking-wide text-white">© 2026 Benjamín Cubillos</p>
+                <p class="mt-2 text-sm text-violet-200">Portafolio personal</p>
+            </div>
         </footer>
     </body>
 </html>
