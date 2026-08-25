@@ -89,6 +89,35 @@ function initializeBackToTop() {
     updateButtonVisibility();
 }
 
+function initializeThemeToggle() {
+    const themeToggle = document.querySelector("#theme-toggle");
+    const themeIcon = document.querySelector("#theme-icon");
+    const themeLabel = document.querySelector("#theme-label");
+
+    function updateThemeButton() {
+        const isDark = document.documentElement.classList.contains("dark");
+        themeToggle.setAttribute("aria-pressed", String(isDark));
+        themeIcon.textContent = isDark ? "☀" : "☾";
+        themeLabel.textContent = isDark ? "Modo claro" : "Modo oscuro";
+    }
+
+    themeToggle.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark");
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+
+        try {
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        } catch {
+            // El tema sigue funcionando aunque el navegador bloquee localStorage.
+        }
+
+        updateThemeButton();
+    });
+
+    updateThemeButton();
+}
+
 initializeMobileMenu();
 initializeActiveNavigation();
 initializeBackToTop();
+initializeThemeToggle();

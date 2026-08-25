@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="CV y portafolio de Benjamín Cubillos, estudiante de Ingeniería en Informática.">
+        <script src="./assets/js/theme-init.js"></script>
         <link href="./assets/css/style.css" rel="stylesheet">
         <script src="./assets/js/main.js" defer></script>
         <title>CV y portafolio | Benjamín Cubillos</title>
@@ -25,6 +26,10 @@
                     <a class="rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-violet-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300" href="#habilidades">Habilidades</a>
                     <a class="rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-violet-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300" href="#portafolio">Portafolio</a>
                     <a class="rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-violet-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300" href="#contacto">Contacto</a>
+                    <button id="theme-toggle" class="flex items-center justify-center gap-2 rounded-md border border-violet-400/40 px-3 py-2 text-sm font-medium text-violet-200 transition-colors hover:border-violet-300 hover:bg-violet-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300" type="button" aria-pressed="false">
+                        <span id="theme-icon" class="text-lg leading-none" aria-hidden="true">☾</span>
+                        <span id="theme-label">Modo oscuro</span>
+                    </button>
                 </div>
             </nav>
         </header>
@@ -141,7 +146,7 @@
                 <h2 class="text-2xl font-bold text-slate-900">Portafolio</h2>
                 <p class="mt-2 text-slate-600">Estos son algunos de los proyectos que he desarrollado.</p>
 
-                <div class="mt-6 grid gap-6 md:grid-cols-2">
+                <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                     <article class="overflow-hidden rounded-xl bg-slate-50 ring-1 ring-slate-200">
                         <a class="block overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700" href="https://github.com/GabFloresLuna/MediReservas" target="_blank" rel="noopener noreferrer">
                             <img class="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105" src="./assets/images/Proyecto-MediReservas.png" alt="Vista previa del proyecto MediReservas" loading="lazy">
@@ -161,6 +166,17 @@
                             <h3 class="text-lg font-semibold text-slate-900">Examen FullStack I</h3>
                             <p class="mt-2 leading-7 text-slate-700">Resolución del Examen Transversal del ramo FullStack I.</p>
                             <a class="mt-4 inline-block font-semibold text-violet-700 underline decoration-violet-300 underline-offset-4 transition-colors hover:text-blue-700" href="https://github.com/Hanrol/ExamenTransversal-FullStack1" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+                        </div>
+                    </article>
+
+                    <article class="overflow-hidden rounded-xl bg-slate-50 ring-1 ring-slate-200">
+                        <a class="block overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700" href="https://github.com/Hanrol/hanrol.github.io" target="_blank" rel="noopener noreferrer">
+                            <img class="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105" src="./assets/images/Proyecto-Portafolio.png" alt="Vista previa del proyecto Examen FullStack I" loading="lazy">
+                        </a>
+                        <div class="p-5">
+                            <h3 class="text-lg font-semibold text-slate-900">Portafolio y CV</h3>
+                            <p class="mt-2 leading-7 text-slate-700">Codigo fuente de esta misma página.</p>
+                            <a class="mt-4 inline-block font-semibold text-violet-700 underline decoration-violet-300 underline-offset-4 transition-colors hover:text-blue-700" href="https://github.com/Hanrol/hanrol.github.io" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
                         </div>
                     </article>
                 </div>

@@ -14,7 +14,7 @@
   "author": "",
   "scripts": {
     "dev": "tailwindcss -i ./assets/src/style.css -o ./assets/css/style.css --watch",
-    "build": "tailwindcss -i ./assets/src/style.css -o ./assets/css/style.css --minify"
+    "build": "tailwindcss -i ./assets/src/style.css -o ./assets/css/style.css"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",

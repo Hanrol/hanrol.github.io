@@ -1,1 +1,67 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body,
+main > section,
+main article,
+main li {
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 300ms;
+}
+
+.dark body.bg-slate-100 {
+    @apply bg-slate-950 text-slate-100;
+}
+
+.dark .bg-white {
+    @apply bg-slate-900;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-100 {
+    @apply bg-slate-800;
+}
+
+.dark .text-slate-900 {
+    @apply text-slate-100;
+}
+
+.dark .text-slate-700 {
+    @apply text-slate-300;
+}
+
+.dark .text-slate-600 {
+    @apply text-slate-400;
+}
+
+.dark .text-slate-500,
+.dark .text-violet-700 {
+    @apply text-violet-300;
+}
+
+.dark .ring-slate-200 {
+    @apply ring-slate-700;
+}
+
+.dark .ring-violet-200 {
+    @apply ring-violet-700;
+}
+
+.dark .border-violet-200 {
+    @apply border-violet-800;
+}
+
+.dark .border-white {
+    @apply border-slate-900;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
