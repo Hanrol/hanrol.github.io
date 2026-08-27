@@ -31,7 +31,7 @@ function initializeMobileMenu() {
     });
 
     window.addEventListener("resize", () => {
-        if (window.innerWidth >= 768) {
+        if (window.innerWidth >= 924) {
             setMenuState(false);
         }
     });
