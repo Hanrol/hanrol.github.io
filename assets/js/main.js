@@ -96,9 +96,14 @@ function initializeThemeToggle() {
 
     function updateThemeButton() {
         const isDark = document.documentElement.classList.contains("dark");
+        const themeColor = document.querySelector('meta[name="theme-color"]');
         themeToggle.setAttribute("aria-pressed", String(isDark));
         themeIcon.textContent = isDark ? "☀" : "☾";
         themeLabel.textContent = isDark ? "Modo claro" : "Modo oscuro";
+
+        if (themeColor) {
+            themeColor.setAttribute("content", isDark ? "#020617" : "#f1f5f9");
+        }
     }
 
     themeToggle.addEventListener("click", () => {
