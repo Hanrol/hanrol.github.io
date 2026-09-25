@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import Footer from './components/layout/Footer.tsx'
 import Header from './components/layout/Header.tsx'
-import BackToTop from './components/navigation/BackToTop.tsx'
+import BackToTop from './components/layout/BackToTop.tsx'
 import HomePage from './pages/HomePage.tsx'
 import CvPage from './pages/CvPage.tsx'
 import ContactPage from './pages/ContactPage.tsx'
