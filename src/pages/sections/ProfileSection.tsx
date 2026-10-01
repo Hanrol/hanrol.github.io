@@ -1,4 +1,4 @@
-import gato from '../assets/images/gato.gif'
+import gato from '../../assets/images/gato.gif'
 import { Link } from 'react-router-dom'
 
 function ProfileSection() {

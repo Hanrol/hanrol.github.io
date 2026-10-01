@@ -1,4 +1,4 @@
-import { experience } from '../data/experience.ts'
+import { experience } from '../../data/portfolioData.ts'
 
 function ExperienceSection() {
     return (

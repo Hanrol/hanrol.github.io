@@ -1,4 +1,4 @@
-import { projects } from '../data/projects.ts'
+import { projects } from '../../data/portfolioData.ts'
 
 function PortfolioSection() {
     return (

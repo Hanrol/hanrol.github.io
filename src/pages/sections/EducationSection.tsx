@@ -1,4 +1,4 @@
-import { education } from '../data/education.ts'
+import { education } from '../../data/portfolioData.ts'
 
 function EducationSection() {
     return (

@@ -1,4 +1,4 @@
-import { skillGroups } from '../data/skills.ts'
+import { skillGroups } from '../../data/portfolioData.ts'
 
 function SkillsSection() {
     return (

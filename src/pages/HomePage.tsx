@@ -1,9 +1,9 @@
-import ContactSection from './ContactSection.tsx'
-import EducationSection from './EducationSection.tsx'
-import ExperienceSection from './ExperienceSection.tsx'
-import PortfolioSection from './PortfolioSection.tsx'
-import ProfileSection from './ProfileSection.tsx'
-import SkillsSection from './SkillsSection.tsx'
+import ContactSection from './sections/ContactSection.tsx'
+import EducationSection from './sections/EducationSection.tsx'
+import ExperienceSection from './sections/ExperienceSection.tsx'
+import PortfolioSection from './sections/PortfolioSection.tsx'
+import ProfileSection from './sections/ProfileSection.tsx'
+import SkillsSection from './sections/SkillsSection.tsx'
 
 function HomePage() {
     return (
