@@ -1,5 +1,15 @@
 # React + TypeScript + Vite
 
+## Pruebas del portafolio
+
+`npm test` ejecuta las pruebas de componentes con Vitest y jsdom.
+
+`npm run test:e2e` ejecuta las pruebas de navegador con Playwright y Chromium. La primera vez, instala el navegador con `npx playwright install chromium`.
+
+`npm run test:e2e:ui` abre la interfaz de Playwright para inspeccionar los recorridos. Las pruebas están en `tests/e2e/`; Playwright inicia y cierra automáticamente Vite en el puerto 5174.
+
+El reporte HTML se genera en `playwright-report/` y se puede abrir con `npx playwright show-report`. Los resultados y reportes están excluidos de Git.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

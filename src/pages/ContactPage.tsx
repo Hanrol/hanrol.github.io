@@ -8,6 +8,12 @@ function ContactPage() {
     const timeoutRef = useRef<number | null>(null)
 
     useEffect(() => {
+        if (isSent) {
+            statusRef.current?.focus()
+        }
+    }, [isSent])
+
+    useEffect(() => {
         const previousTitle = document.title
         document.title = 'Contacto | Benjamín Cubillos'
 
@@ -38,7 +44,6 @@ function ContactPage() {
             setIsSending(false)
             setIsSent(true)
             timeoutRef.current = null
-            window.requestAnimationFrame(() => statusRef.current?.focus())
         }, 1000)
     }
 

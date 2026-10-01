@@ -1,0 +1,76 @@
+import { expect, test } from '@playwright/test'
+
+test('navega al CV, contacto y vuelve desde una ruta desconocida', async ({ page }) => {
+    await page.goto('/#/')
+    await page.getByRole('link', { name: 'Ver CV' }).click()
+    await expect(page).toHaveURL(/#\/cv$/)
+    await expect(page.getByRole('button', { name: 'Guardar como PDF' })).toBeVisible()
+    await page.getByRole('link', { name: 'Volver al portafolio' }).click()
+    await page.getByRole('link', { name: 'Abrir formulario de contacto' }).click()
+    await expect(page).toHaveURL(/#\/contacto$/)
+    await expect(page.getByRole('heading', { name: 'Formulario de contacto' })).toBeVisible()
+    await page.goto('/#/no-existe')
+    await expect(page.getByRole('heading', { name: 'Página no encontrada' })).toBeVisible()
+    await page.getByRole('link', { name: 'Volver al portafolio' }).click()
+    await expect(page.getByRole('heading', { name: 'Perfil profesional' })).toBeVisible()
+})
+
+test('la navbar desplaza a una sección sin cambiar la ruta', async ({ page }) => {
+    await page.goto('/#/')
+    await page.getByRole('navigation').getByRole('link', { name: 'Experiencia', exact: true }).click()
+    await expect(page).toHaveURL(/#\/$/)
+    await expect.poll(() => page.locator('#experiencia').evaluate((element) => Math.abs(element.getBoundingClientRect().top))).toBeLessThan(5)
+    await expect(page.getByRole('heading', { name: 'Página no encontrada' })).toHaveCount(0)
+})
+
+test('el menú móvil cierra con Escape y al elegir una sección', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/#/')
+    const menu = page.getByRole('button', { name: 'Abrir menú' })
+    await expect(page.locator('#nav-menu')).toBeHidden()
+    await menu.click()
+    await expect(page.getByRole('button', { name: 'Cerrar menú' })).toHaveAttribute('aria-expanded', 'true')
+    await page.keyboard.press('Escape')
+    await expect(menu).toBeFocused()
+    await expect(page.locator('#nav-menu')).toBeHidden()
+    await menu.click()
+    await page.getByRole('navigation').getByRole('link', { name: 'Educación', exact: true }).click()
+    await expect(page.locator('#nav-menu')).toBeHidden()
+    await expect(menu).toHaveAttribute('aria-expanded', 'false')
+    await expect(page).toHaveURL(/#\/$/)
+})
+
+test('conserva el tema oscuro al recargar y permite volver al claro', async ({ page }) => {
+    await page.goto('/#/')
+    await page.getByRole('button', { name: 'Modo oscuro' }).click()
+    await expect(page.locator('html')).toHaveClass(/dark/)
+    await page.reload()
+    await expect(page.getByRole('button', { name: 'Modo claro' })).toHaveAttribute('aria-pressed', 'true')
+    await expect(page.locator('html')).toHaveClass(/dark/)
+    await page.getByRole('button', { name: 'Modo claro' }).click()
+    await expect(page.locator('html')).not.toHaveClass(/dark/)
+})
+
+test('valida el formulario y completa el envío simulado', async ({ page }) => {
+    await page.goto('/#/contacto')
+    await page.getByRole('button', { name: 'Enviar mensaje' }).click()
+    await expect(page.getByRole('status')).toBeHidden()
+    await page.getByLabel('Nombre').fill('Benjamín')
+    await page.getByLabel('Correo').fill('prueba@example.com')
+    await page.getByLabel('Asunto').fill('Consulta')
+    await page.getByLabel('Mensaje', { exact: true }).fill('Este es un mensaje de prueba.')
+    await page.getByRole('button', { name: 'Enviar mensaje' }).click()
+    await expect(page.getByRole('button', { name: 'Enviando...' })).toBeDisabled()
+    await expect(page.getByRole('status')).toBeVisible()
+    await expect(page.getByRole('status')).toBeFocused()
+    await expect(page.getByLabel('Nombre')).toHaveValue('')
+})
+
+test('descarga el PDF del CV', async ({ page }) => {
+    await page.goto('/#/cv')
+    const downloadPromise = page.waitForEvent('download')
+    await page.getByRole('link', { name: 'Descargar PDF' }).click()
+    const download = await downloadPromise
+    expect(download.suggestedFilename()).toBe('CV-Benjamin-Cubillos.pdf')
+    expect(await download.failure()).toBeNull()
+})
